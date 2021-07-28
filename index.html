@@ -4,17 +4,30 @@
 </head>
 <body>
     <div id = "navbar">
-        <div id="reset">
-            <button id = "size-btn">Choose a Size: 
-                <input type="range" id="size" name = "size" min="1" max="100" value = "2">
-            </button>
+        <div id="row-one">
+
             <button id = "color-choice-btn">
                 Choose a Color: <input 
                         id="color-choice" 
                         type = "color" 
                         value="#ffff00">
             </button>
+            <button id="rainbow">
+                Use Rainbow: <input 
+                        id="rainbow-choice"
+                        type = "button">
+            </button>
             <button id = "reset-btn">Reset</button>
+
+        </div>
+        <div id="row-two">
+            <button id = "size-btn">Choose a Size: 
+                <input type="range" 
+                        id="size" 
+                        name = "size" 
+                        min="3" max="100" 
+                        value = "10">
+            </button>
         </div>
     </div>
     <div id = "main"> text
