@@ -1,0 +1,27 @@
+*{
+    --grid-dim: 60vh;
+}
+
+#grid{
+    display: grid;
+    width: var(--grid-dim);
+    height: var(--grid-dim);
+
+}
+#grid div{
+
+    background-color: yellow;
+}
+
+#main {
+    background-color: blue;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+
+#grid .grid-box{
+    background-color: rgb(200, 200, 200);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
