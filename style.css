@@ -14,22 +14,32 @@
 }
 
 #main {
-    backgroun d-color: blue;
+    //background-color: blue;
     height: 100vh;
     width: 100vw;
 
 }
 
-
 #grid .grid-box{
-    background-color: rgb(200, 200, 200);
+    background-color: rgba(240,240,240,1.0);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
+#main{
+    width:100vw;
+    height:100vh;
+    color: rgba(240,240,240,1.0);
+}
 #sketchbox {
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2), -1px -1px 3px rgba(0,0,0,0.2);
-    border: yellow solid;
+    background-color: yellow solid;
+    width:100vw;
+    height:100vh;
+
 }
 .rainbow-active{
-    background-color: red;;
+    background-color: red;
+}
+
+.grayscale-active{
+    background-color:pink;
 }
