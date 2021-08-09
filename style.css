@@ -1,6 +1,36 @@
 *{
-    --grid-dim: 60vh;
+    --grid-dim: 40vw;
+    --background-color: rgb(255, 0, 0);
+    --highlight-color: #d4af37;
 }
+body{
+    background-color: var(--background-color);
+}
+
+#main-title{
+    color: var(--highlight-color);
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Satisfy', cursive;
+}
+
+#navbar{
+    padding: 10vh 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+#row-one{
+    display:flex;
+    justify-content: space-evenly;
+    padding : 0 0 10px 0;
+}
+#row-two{
+    display:flex;
+    justify-content: space-evenly;
+}
+
 
 #grid{
     display: grid;
@@ -8,20 +38,18 @@
     height: var(--grid-dim);
 
 }
-#grid div{
 
-    background-color: yellow;
-}
 
 #main {
-    //background-color: blue;
     height: 100vh;
     width: 100vw;
 
 }
+#grid{
+    background-color: white;
+}
 
 #grid .grid-box{
-    background-color: rgba(240,240,240,1.0);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 #main{
@@ -31,15 +59,31 @@
 }
 #sketchbox {
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2), -1px -1px 3px rgba(0,0,0,0.2);
-    background-color: yellow solid;
     width:100vw;
     height:100vh;
 
 }
-.rainbow-active{
-    background-color: red;
+#row-one button, #row-two button{
+    border:none;
 }
 
-.grayscale-active{
-    background-color:pink;
+#size-btn{
+    width: 82vw;
+}
+
+#size{
+    width:70%;
+}
+
+.btn{
+    background-color: var(--highlight-color);
+}
+
+.btn:hover{
+    background-color: gold;
+}
+
+#main{
+    position:relative;
+    left: 30vw;
 }

@@ -5,10 +5,11 @@ const selectedColor = document.querySelector("#color-choice");
 const rainbowButton = document.querySelector("#rainbow");
 const grayscaleButton = document.querySelector("#grayscale");
 const colorButton = document.querySelector("#color-choice-btn");
+const blackButton = document.querySelector("#black");
 let size = document.querySelector("#size");
 
 // maybe color,grayscale & rainbow should share one status
-let colorStatus = 0; // 0= color, 1=rainbow, 2=grayscale
+let colorStatus = 0; // 0= color, 1=grayscale, 2=rainbow, 3=black
 
 createGrid(makeChoice("#size"));
 
@@ -25,9 +26,7 @@ function createGrid(dim){
 }
 const gridList = document.querySelectorAll(".grid-box"); // NodeList of createGrid(dim)
 
-function changeColor(e){
-    //console.log(`rain: ${rainbowStatus} grey: ${grayscaleStatus}`);
-    
+function changeColor(e){     
     if (colorStatus == 0){
         e.target.style.backgroundColor = makeChoice("#color-choice");
     }
@@ -37,21 +36,17 @@ function changeColor(e){
     } 
     if(colorStatus == 1){
         let shade = e.target.style.backgroundColor.slice(-3,-1);
-        console.log("shade before: " + shade);
         if(shade <= 0.89){
             shade = Number(shade) + 0.1;
-            //console.log("shade after: " + shade);
-            //console.log("color? " + `rgba(0,0,0,${shade})`);
+
             e.target.style.backgroundColor = `rgba(0,0,0,${shade})`;
         } else{
             e.target.style.backgroundColor = "black";
         }
-
     }
-}
-
-function grayScale(e){
-
+    if(colorStatus == 3){
+        e.target.style.backgroundColor = "black";
+    }
 }
 
 
@@ -78,34 +73,18 @@ function btnTest(){
 
 resetButton.onclick = function(){resetGrid()};
 
-function changeColorStatus (buttonStatus, defaultStatus){
-    rainbowButton.classList.toggle("rainbow-active");
-    grayscaleButton.classList.toggle('grayscale-active');
-   /* if (buttonStatus == 1){
-        let allGrid = document.querySelectorAll(".grid-box");
-        for (let i = 0; i < allGrid.length; i++){
-            allGrid[i].style.opacity=0;
-        }
-    }*/
-    // Trying something else to do the above first
-    return colorStatus != buttonStatus ? colorStatus = buttonStatus : colorStatus = defaultStatus; // if rainbow isn't on, turn it on, if its on, turn it to basic color 
+function changeColorStatus (buttonStatus){
+    resetGrid();
+    return colorStatus != buttonStatus ? colorStatus = buttonStatus : colorStatus = 0; 
 }
 
 
 //Button & Slider Operations
 size.addEventListener('mouseup', function() {resetGrid();});
-rainbowButton.onclick = function(){changeColorStatus(2,0)}; //changes between rainbow and color 
-grayscaleButton.onclick = function(){changeColorStatus(1,0)};//changes between gray and color
-colorButton.onclick = function(){changeColorStatus(0,0)};
+rainbowButton.onclick = function(){changeColorStatus(2)}; 
+grayscaleButton.onclick = function(){changeColorStatus(1)};
+colorButton.onclick = function(){changeColorStatus(0)};
+blackButton.onclick = function(){changeColorStatus(3)};
 
 
 
-/*  PSUEDO CODE
-    
-    add toggle/scale that allows random color and grayscale
-    - grayscale is 10% dark, go over it a second time, and 
-    - add 10% more, until full
-    Option: courtney's hidden message thing
-
-
-*/

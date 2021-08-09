@@ -1,36 +1,40 @@
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <script type = "text/javascript" src="script.js" defer></script>
+    
 </head>
 <body>
     <div id = "navbar">
+        <h1 id ="main-title">Etch-A-Sketch</h1>
         <div id="row-one">
-            <button id = "black">
+            <button id = "black" class="btn btn-info">
                 Black: <input 
                         id ="black-choice"
                         type = "button">
             </button>
-            <button id = "color-choice-btn">
+            <button id = "color-choice-btn" class="btn btn-info" data-toggle="button">
                 Choose a Color: <input 
                         id="color-choice" 
                         type = "color" 
-                        value="#ffff00">
+                        value="#0000ff">
             </button>
-            <button id="rainbow">
+            <button id="rainbow" class="btn btn-info" data-toggle="button">
                 Use Rainbow: <input 
                         id="rainbow-choice"
                         type = "button">
             </button>
-            <button id="grayscale">
+            <button id="grayscale" class="btn btn-info">
                 Use Grayscale: <input 
                         id="grayscale-btn"
                         type = "button">
             </button>
-            <button id = "reset-btn">Reset</button>
+            <button id = "reset-btn" class="btn btn-info">Reset</button>
 
         </div>
         <div id="row-two">
-            <button id = "size-btn">Choose a Size: 
+            <button id = "size-btn" class = "btn btn-info">Choose a Size: 
                 <input type="range" 
                         id="size" 
                         name = "size" 
